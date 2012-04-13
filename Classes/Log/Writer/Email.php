@@ -71,7 +71,7 @@ class Tx_LogWriteremail_Log_Writer_Email extends t3lib_log_writer_Abstract {
 		$this->subject =
 			'[' . t3lib_div::getHostname() . '] ' .
 			'[' . t3lib_log_Level::getName($record->getLevel()) . '] ' .
-			'in ' . $record->getComponent() . $record . ': ' .
+			'in ' . $record->getComponent() . ': ' .
 			$record->getMessage()
 		;
 		$this->subject = t3lib_div::fixed_lgd_cs($this->subject, $this->cropLength);
