@@ -35,16 +35,16 @@
 class Tx_LogWriteremail_Log_Writer_Email extends t3lib_log_writer_Abstract {
 
 		/** @var string */
-	protected $recipient;
+	protected $recipient = '';
 
 		/** @var string */
-	protected $sender;
+	protected $sender = '';
 
 		/** @var string */
-	protected $subject;
+	protected $subject = '';
 
 		/** @var string */
-	protected $body;
+	protected $body = '';
 
 		/** @var int */
 	protected $cropLength = 76;
