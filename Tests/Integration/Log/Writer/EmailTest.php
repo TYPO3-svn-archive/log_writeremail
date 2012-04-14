@@ -26,11 +26,12 @@
 /**
  *
  */
-class Tx_LogWriteremail_Log_Writer_EmailTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
+class Tx_LogWriteremail_Log_Writer_EmailTest extends tx_phpunit_testcase {
 
 
 	/** @var Tx_LogWriteremail_Log_Writer_Email */
 	private $fixture = NULL;
+
 
 	public function setUp() {
 		$this->fixture = new Tx_LogWriteremail_Log_Writer_Email();
