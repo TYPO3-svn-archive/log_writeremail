@@ -68,6 +68,10 @@ class Tx_LogWriteremail_Log_Writer_Email extends t3lib_log_writer_Abstract {
 	 * @param t3lib_log_Record $record
 	 */
 	public function writeLog(t3lib_log_Record $record) {
+		if (empty($this->recipient) || empty($this->sender)) {
+			return FALSE;
+		}
+
 		$this->subject =
 			'[' . t3lib_div::getHostname() . '] ' .
 			'[' . t3lib_log_Level::getName($record->getLevel()) . '] ' .
@@ -77,9 +81,7 @@ class Tx_LogWriteremail_Log_Writer_Email extends t3lib_log_writer_Abstract {
 		$this->subject = t3lib_div::fixed_lgd_cs($this->subject, $this->cropLength);
 		$this->body = $record->getMessage() . print_r($record->getData(), TRUE);
 
-		if ($this->recipient && $this->sender) {
-			$this->sendMail();
-		}
+		$this->sendMail();
 	}
 
 	/**
