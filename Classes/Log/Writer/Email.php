@@ -102,6 +102,34 @@ class Tx_LogWriteremail_Log_Writer_Email extends t3lib_log_writer_Abstract {
 			t3lib_log_LogManager::getLogger(__CLASS__)->warning($e);
 		}
 	}
+
+	/**
+	 * @param string $sender
+	 */
+	public function setSender($sender) {
+		$this->sender = $sender;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getSender() {
+		return $this->sender;
+	}
+
+	/**
+	 * @param string $recipient
+	 */
+	public function setRecipient($recipient) {
+		$this->recipient = $recipient;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getRecipient() {
+		return $this->recipient;
+	}
 }
 
 
